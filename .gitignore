@@ -1,3 +1,12 @@
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+*[Tt]est*.*
+*[Tt]est*/
+/Assets/AssetStoreTools*
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
