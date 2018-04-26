@@ -9,7 +9,7 @@ public class CameraBehavior : MonoBehaviour {
 
     public void EnablePlayerMovement()
     {
-        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<PlayerController>().enabled = true;
         GetComponent<Animator>().enabled = false;
         GetComponent<SmoothFollow>().enabled = true;
     }
