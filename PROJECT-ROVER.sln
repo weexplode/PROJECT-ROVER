@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PROJECT-ROVER.Plugins", "PROJECT-ROVER.Plugins.csproj", "{9AC1A4AC-F9FE-2A1C-AD2C-74493A578658}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PROJECT-ROVER", "PROJECT-ROVER.csproj", "{78E9E873-C72D-A4B5-598B-9794DAC38A26}"
