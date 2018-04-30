@@ -13,5 +13,11 @@ public class PlayerMovement : MonoBehaviour {
         float delta = Time.deltaTime;
         transform.Translate(Vector3.forward * forward * speed * delta);
         transform.Rotate(0, turn * turnspeed * delta, 0);
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            transform.Translate(Vector3.up * 2);
+            transform.rotation = Quaternion.identity;
+        }
 	}
 }
