@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject console;
     public Transform consoleOff;
     public Transform consoleOn;
+    public GameObject indicatorTab;
 
     bool transitioning;
     Transform transitionTransform;
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour {
     Vector3 transitionOrigin;
     float transitionRate;
 
-    bool consoleEnabled = false;
+    public bool consoleEnabled = false;
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour {
                 consoleEnabled = !consoleEnabled;
                 BeginTransition(console.transform, consoleEnabled ? consoleOn.position : consoleOff.position, 3);
                 GetComponent<PlayerMovement>().enabled = !consoleEnabled;
+                indicatorTab.transform.Find("TabText").gameObject.SetActive(false);
+                indicatorTab.transform.Find("Bloop Indicator").GetComponent<Bloop>().enabled = false;
             }
         }
 	}

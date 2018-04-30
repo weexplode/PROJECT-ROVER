@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             transform.Translate(Vector3.up * 2);
             transform.rotation = Quaternion.identity;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
 	}
 }
