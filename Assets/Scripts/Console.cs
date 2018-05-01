@@ -90,7 +90,7 @@ public class Console : MonoBehaviour {
             {
                 if (connected is Activatable)
                 {
-                    return ((Activatable)connected).Activate();
+                    return ((Activatable)connected).Activate(args.Length > 1 ? args[1] : null);
                 } else
                 {
                     return "Nothing nearby to activate.";

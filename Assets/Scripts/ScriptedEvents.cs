@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScriptedEvents : MonoBehaviour {
 
@@ -10,6 +13,9 @@ public class ScriptedEvents : MonoBehaviour {
     public PlayerController player;
     public BoxCollider nurseryDoor;
     public BoxCollider commandDoor;
+    public Image endImage;
+    public Text endText;
+
 
     public float timer = 8;
     // gameStep 0 = start
@@ -19,7 +25,7 @@ public class ScriptedEvents : MonoBehaviour {
     // 4 = visited nursery
     // 5 = completed nursery puzzle
     // 6 = 
-    // 7 = 
+    // 7 = game ending
     public int gameStep = 0;
 
     private void Start()
@@ -28,11 +34,24 @@ public class ScriptedEvents : MonoBehaviour {
         console.PrintLine("BOOTING UP...");
     }
 
+    public void FadeToBlack()
+    {
+        player.enabled = false;
+        console.enabled = false;
+        gameStep = 7;
+        timer = 10;
+    }
+
     // Update is called once per frame
     void Update () {
         if (timer > 0)
         {
             timer -= Time.deltaTime;
+            if(gameStep == 7)
+            {
+                endImage.color = new Color(0, 0, 0, Math.Min((10 - timer) / 5, 1));
+                endText.color = new Color(255, 255, 255, Math.Min((10 - timer) / 5, 1));
+            }
             if (timer < 0)
             {
                 if (gameStep == 0)
@@ -59,6 +78,9 @@ public class ScriptedEvents : MonoBehaviour {
                     console.PrintLine("LAST CONTACT: 99999 DAYS AGO");
                     console.PrintLine("");
                     gameStep++;
+                } else if(gameStep == 7)
+                {
+                    SceneManager.LoadScene(0);
                 }
             }
         }

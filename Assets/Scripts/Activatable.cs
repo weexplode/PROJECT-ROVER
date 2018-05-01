@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Activatable : Connectable {
 
-	public virtual string Activate()
+	public virtual string Activate(string arg)
     {
         return null;
     }
